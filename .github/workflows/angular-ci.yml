@@ -30,7 +30,4 @@ jobs:
       - name: Construire l'application
         run: npm run build -- --configuration=production
 
-      - name: Déployer sur GitHub Pages
-        if: success()
-        run: |
-          npx angular-cli-ghpages --dir=dist/portfolio
+
