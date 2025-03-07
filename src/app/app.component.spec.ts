@@ -1,25 +1,26 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {createComponent} from '@angular/core';
+import { RouterModule } from '@angular/router';
+import any = jasmine.any;
 
 describe('AppComponent', () => {
-  let app: AppComponent;
+  let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [],
+      imports: [RouterModule.forRoot([])],
       declarations: [AppComponent]
-
     }).
     compileComponents();
   });
+  beforeEach( ()=> {
 fixture = TestBed.createComponent(AppComponent);
-app = fixture.componentInstance;
+component = fixture.componentInstance;
 fixture.detectChanges();
 });
   it('should create the app', () => {
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it(`should have the title 'Hello, portfolio' `, () => {
@@ -28,6 +29,13 @@ fixture.detectChanges();
     expect(app.title).toEqual('Hello, portfolio');
   });
 
+  it('should have the title "Hello, portfolio"', () => {
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(component.title).toEqual('Hello, portfolio'); // Teste l'affichage
+  });
+});
+
   it('should render title "portfolio"', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
@@ -35,9 +43,3 @@ fixture.detectChanges();
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio');
   });
 
-  it('should have the title "Hello, portfolio"', () => {
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio'); // Teste l'affichage
-  });
-  });
