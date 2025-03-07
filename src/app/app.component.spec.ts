@@ -9,8 +9,8 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterModule.forRoot([])],
-      declarations: [AppComponent]
+      imports: [AppComponent],
+      declarations: []
     }).
     compileComponents();
   });
