@@ -1,1 +1,55 @@
-<p>projects works!</p>
+<div class="projects-page">
+  <h2>📂 Mes Projets</h2>
+  <p>Découvrez les projets sur lesquels j'ai travaillé.</p>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="assets/pmt.png" alt="pmt">
+      <div class="project-info">
+        <h3>🌟 Project Management Tool</h3>
+        <p>Application pour gestion de projets.</p>
+        <!-- Utilisation de routerLink pour naviguer vers la page de détails -->
+        <a [routerLink]="['/projects', 'project management tool']">Voir les détails</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/cockpit.jpeg" alt="cockpit">
+      <div class="project-info">
+        <h3>💡 Cockpit SAP</h3>
+        <p>Cockpit en ABAP.</p>
+        <a [routerLink]="['/projects', 'cockpit']">Voir les détails</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/zfb47.jpeg" alt="zfb47">
+      <div class="project-info">
+        <h3>🚀 ZFB47</h3>
+        <p>Transaction utilisée en usine.</p>
+        <a [routerLink]="['/projects', 'zfb47']">Voir les détails</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="assets/portfolioo.jpeg" alt="portfolio">
+      <div class="project-info">
+        <h3>🌟 Portfolio</h3>
+        <p>Portfolio Développeuse Web.</p>
+        <a [routerLink]="['/projects', 'portfolio']">Voir les détails</a>
+      </div>
+  </div>
+
+
+    <div class="project-card">
+      <img src="assets/idocs.jpeg" alt="gestion d'idocs">
+      <div class="project-info">
+        <h3>💡 IDOCS</h3>
+        <p>Gestion des erreurs IDocs SAP.</p>
+        <a [routerLink]="['/projects', 'gestion d\'idocs']">Voir les détails</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+

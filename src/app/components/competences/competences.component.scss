@@ -1,0 +1,82 @@
+/* 🌈 Fond général avec un dégradé */
+.competences-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 20px;
+}
+
+/* 🏆 Carte principale */
+.competences-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* 🏷️ Titre */
+h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* 📦 Wrapper des compétences */
+.competences-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* 🎭 Box pour chaque catégorie de compétences */
+.competence-box {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Titres */
+h3 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ✅ Liste des compétences sous forme de boutons */
+.competences-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background: white;
+  border: 2px solid #1976d2;
+  color: #1976d2;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #1976d2;
+  color: white;
+}
+
+/* 💡 Zone de description affichée après un clic */
+.competence-details {
+  background: #e3e3e3;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 4px solid #1976d2;
+  font-size: 18px;
+  border-radius: 8px;
+}

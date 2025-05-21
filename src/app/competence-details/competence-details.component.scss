@@ -1,0 +1,137 @@
+.competence-details-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  padding: 100px 20px 40px;
+  box-sizing: border-box;
+}
+
+.competence-details-card {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+  text-align: left;
+}
+
+.competence-image {
+  display : block;
+  max-width: 100%;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+/* TITRES */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  .centered-title {
+    text-align: center;
+  }
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+/* PARAGRAPHES ET LISTES JUSTIFIÉS */
+p.justified,
+ul.justified {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+ul.justified {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+ul.justified li {
+  margin-bottom: 0.5rem;
+}
+
+/* BOUTON DE RETOUR + boutons généraux */
+button {
+  background: #667eea;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* NAVBAR (si utilisée ici) */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* Projets associés */
+.related-projects {
+  margin-top: 2rem; /* un peu moins d’espace au-dessus */
+  text-align: center;
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.4rem;
+    display: inline-block;
+  }
+
+  .project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    a.project-btn {
+      background: #3b82f6;
+      color: #fff;
+      padding: 6px 14px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s ease-in-out;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        background: #2563eb;
+      }
+    }
+  }
+}
+
+

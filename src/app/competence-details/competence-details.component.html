@@ -1,0 +1,39 @@
+<div class="competence-details-page" *ngIf="competenceName && competenceDescription; else loading">
+  <div class="competence-details-card">
+
+    <!-- Image de la compétence -->
+    <img
+      *ngIf="image"
+      [src]="image"
+      [alt]="competenceName"
+      class="competence-image"
+    />
+
+    <!-- Titre de la compétence -->
+    <h2 class="centered-title">{{ competenceName }}</h2>
+
+    <!-- Description formatée -->
+    <div class="competence-description" [innerHTML]="formattedDescription"></div>
+
+    <!-- Projets associés -->
+    <div class="related-projects" *ngIf="competenceDetails?.projetsAssocies?.length">
+      <h3>Projets associés</h3>
+      <div class="project-buttons">
+        <a
+          *ngFor="let projectId of competenceDetails.projetsAssocies"
+          [routerLink]="['/projects', projectId.toLowerCase()]"
+          class="project-btn"
+        >
+          {{ projectId | titlecase }}
+        </a>
+      </div>
+    </div>
+
+    <!-- Bouton de retour -->
+    <button mat-button color="primary" routerLink="/competences">← Retour aux compétences</button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Chargement de la compétence...</p>
+</ng-template>

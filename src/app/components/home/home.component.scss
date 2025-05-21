@@ -1,12 +1,199 @@
 .home-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  height: 80vh;
+  background: white linear-gradient(to right, #667eea, #764ba2);
+  background-size: cover;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 3px solid #007bff;
+  padding-bottom: 4rem;
+
+  .background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.6) blur(5px);
+    z-index: -1;
+  }
 }
 
 .home-card {
-  padding: 20px;
-  text-align: center;
+  position: relative;
+  padding: 25px;
+  width: clamp(300px, 60%, 800px);
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .profile-photo {
+    display: block;
+    width: clamp(120px, 25%, 200px);
+    height: clamp(120px, 25%, 200px);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  mat-card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  mat-card-content p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  mat-card-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+
+    button {
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: #f5a623;
+      }
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+  .home-card {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  mat-card-title {
+    font-size: 1.6rem;
+  }
+
+  mat-card-content p {
+    font-size: 1rem;
+  }
+}
+
+// Parcours
+.parcours-card {
+  position: relative;
+  margin: 4rem auto;
+  padding: 25px;
   max-width: 500px;
+  width: 90%; // ✅ Étend à 100% du parent pour petits écrans
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; // ✅ Centrage vertical du contenu si besoin
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box; // ✅ Empêche les débordements sur mobile
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  mat-card-title {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 25px;
+    border-left: 3px solid #667eea;
+    width: 100%; // ✅ Assure un bon affichage même sur petit écran
+    box-sizing: border-box;
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+      animation: fadeInUp 0.8s ease both;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: -11px;
+        top: 6px;
+        width: 14px;
+        height: 14px;
+        background: #667eea;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+      }
+
+      .timeline-date {
+        font-weight: bold;
+        color: #667eea;
+        font-size: 0.95rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .timeline-content {
+        h3 {
+          font-size: 1.25rem;
+          margin: 0;
+          color: #222;
+        }
+
+        .sous-titre {
+          font-size: 1rem;
+          color: #666;
+          margin-bottom: 0.5rem;
+          font-style: italic;
+        }
+
+        .description {
+          font-size: 0.95rem;
+          color: #444;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+
+// Animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

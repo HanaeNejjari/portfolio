@@ -1,0 +1,45 @@
+<div class="project-details-page">
+  <div class="project-details-card" *ngIf="projectDetails; else errorTemplate">
+
+    <!-- Titre principal -->
+    <h1 class="project-title">{{ projectDetails?.title }}</h1>
+
+    <!-- Image du projet -->
+    <img
+      *ngIf="projectDetails?.image"
+      [src]="projectDetails?.image"
+      [alt]="projectDetails?.title"
+      class="project-image"
+    />
+
+    <!-- Description HTML enrichie -->
+    <div class="project-description" [innerHTML]="projectDetails?.description"></div>
+
+    <div class="related-competences" *ngIf="projectDetails?.competencesAssociees?.length">
+      <h3>Compétences associées</h3>
+      <div class="competence-buttons">
+        <a
+          *ngFor="let competenceId of projectDetails?.competencesAssociees"
+          [routerLink]="['/competence', competenceId]"
+          class="competence-btn"
+        >
+          {{ competenceId | titlecase }}
+        </a>
+      </div>
+    </div>
+
+    <!-- Année du projet -->
+    <p *ngIf="projectDetails.year" class="project-year">Année : {{ projectDetails.year }}</p>
+
+    <!-- Bouton de retour -->
+    <button class="back-button" (click)="goBack()">← Retour</button>
+  </div>
+
+  <!-- Si le projet n'existe pas -->
+  <ng-template #errorTemplate>
+    <div class="error-message">
+      <p>Le projet n'existe pas ou le lien est incorrect.</p>
+      <button class="back-button" (click)="goBack()">← Retour</button>
+    </div>
+  </ng-template>
+</div>

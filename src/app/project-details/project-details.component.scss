@@ -1,0 +1,135 @@
+.project-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 100px 20px 40px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  box-sizing: border-box;
+}
+
+.project-details-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 850px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.project-image {
+  display : block;
+  width : 100%;
+  max-width: 600%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto 2rem auto;
+}
+
+.project-description {
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+
+  h2, h3 {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #444;
+    border-left: 4px solid #667eea;
+    padding-left: 12px;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+  }
+}
+
+.related-competences {
+  margin-top: 2rem;
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: #444;
+  }
+
+  .competence-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .competence-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #3b82f6;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #2563eb;
+    }
+  }
+}
+
+
+.project-year {
+  margin-top: 1.5rem;
+  color: #666;
+  font-style: italic;
+}
+
+.back-button {
+  margin-top: 2.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: #5a67d8;
+  }
+}
+
+.error-message {
+  text-align: center;
+  background: #fff0f0;
+  color: #a94442;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,13 +1,32 @@
 <div class="home-container">
+  <div class="background-image"></div> <!-- Image de fond -->
+
   <mat-card class="home-card">
+    <img src="assets/moi.jpeg" alt="Hanae Nejjari" class="profile-photo"/>
+
     <mat-card-title>Bienvenue sur mon Portfolio</mat-card-title>
     <mat-card-content>
-      <p>Je suis <strong>Hanae Nejjari</strong>, développeuse web passionnée.</p>
+      <p>Je suis <strong>Hanae Nejjari</strong>, experte en ingénierie du logiciel.</p>
       <p>Découvrez mes projets et contactez-moi !</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" routerLink="/projects">Voir mes projets</button>
     </mat-card-actions>
   </mat-card>
-</div>
+
+  <mat-card class="parcours-card">
+    <mat-card-title>🎓 Mon Parcours</mat-card-title>
+    <mat-card-content>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let item of parcours">
+          <div class="timeline-date">{{ item.date }}</div>
+          <div class="timeline-content">
+            <h3>{{ item.titre }}</h3>
+            <p class="sous-titre">{{ item.sousTitre }}</p>
+            <p class="description">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 

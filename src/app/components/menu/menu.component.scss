@@ -1,0 +1,19 @@
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw; /* Espacement des boutons dépendant de la largeur de l'écran */
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh;
+}
+
+button {
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Ajuste la taille entre 0.8rem et 1.2rem */
+  padding: 1vh 2vw; /* Adapté à la hauteur et largeur de l'écran */
+  min-width: 15vw; /* Largeur minimale de chaque bouton */
+  flex: 1; /* Permet aux boutons de prendre la même largeur */
+  max-width: 25vw; /* Évite qu'ils ne deviennent trop grands */
+  transition: all 0.3s ease-in-out;
+}
+

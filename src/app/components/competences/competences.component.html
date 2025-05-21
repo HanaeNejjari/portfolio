@@ -1,0 +1,49 @@
+<div class="competences-page">
+  <div class="competences-card">
+    <h2>🚀 Mes Compétences</h2>
+    <p>
+      Voici un aperçu de mes compétences techniques et humaines que j'ai pu acquérir au cours de mon cursus scolaire,
+      ainsi que professionnel.
+    </p>
+
+    <div class="competences-wrapper">
+
+      <!-- Compétences Techniques -->
+      <div class="competence-box">
+        <h3>💻 Compétences Techniques</h3>
+        <div class="competences-list">
+          <button *ngFor="let competence of competencesTechniques"
+                  [routerLink]="['/competence', competence.id]">
+            {{ competence.name }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Compétences Humaines -->
+      <div class="competence-box">
+        <h3>🧠 Compétences Humaines</h3>
+        <div class="competences-list">
+          <button *ngFor="let competence of competencesHumaines"
+                  [routerLink]="['/competence', competence.id]">
+            {{ competence.name }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Langues Parlées -->
+      <div class="competence-box">
+        <h3>🌍 Langues Parlées</h3>
+        <div class="competences-list">
+          <button *ngFor="let language of languesParlees"
+                  (click)="selectLanguage(language)">
+            {{ language.name }}
+          </button>
+        </div>
+        <div *ngIf="selectedLanguageDescription" class="competence-details">
+          <p>{{ selectedLanguageDescription }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
