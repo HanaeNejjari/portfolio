@@ -34,3 +34,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npx angular-cli-ghpages --dir=dist/portfolio --repo=https://x-access-token:${GH_TOKEN}@github.com/HanaeNejjari/portfolio.git --no-silent
+
