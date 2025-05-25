@@ -24,6 +24,11 @@ jobs:
       - name: Construire l'application Angular
         run: npm run build -- --configuration production
 
+      - name: Configurer l'identité Git
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+
       - name: Déployer sur GitHub Pages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
