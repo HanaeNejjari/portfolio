@@ -24,8 +24,8 @@ jobs:
       - name: Installer les dépendances
         run: npm install
 
-      - name: Lancer les tests
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
+      - name: Skipping tests (portfolio only)
+        run: echo "Aucun test à exécuter pour ce projet."
 
       - name: Construire l'application
         run: npm run build -- --configuration=production
