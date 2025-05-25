@@ -19,13 +19,18 @@ jobs:
       - name: Installer Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # 22 est encore instable pour Angular
+          node-version: 18
 
       - name: Installer les dépendances
         run: npm install
 
       - name: Construire l'application Angular
         run: npm run build -- --configuration production
+
+      - name: Configurer l'identité Git
+        run: |
+          git config --global user.email "hanae@example.com"
+          git config --global user.name "Hanae Nejjari"
 
       - name: Déployer sur GitHub Pages
         run: |
