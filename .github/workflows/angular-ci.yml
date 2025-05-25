@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,18 +19,14 @@ jobs:
       - name: Installer Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18  # 22 est encore instable pour Angular
 
       - name: Installer les dépendances
         run: npm install
 
-      - name: Skipping tests (portfolio only)
-        run: echo "Aucun test à exécuter pour ce projet."
-
-      - name: Construire l'application
-        run: npm run build -- --configuration=production
+      - name: Construire l'application Angular
+        run: npm run build -- --configuration production
 
       - name: Déployer sur GitHub Pages
-        if: success()
         run: |
-          npx angular-cli-ghpages --dir=dist/portfolio
+          npx angular-cli-ghpages --dir=dist/portfolio --no-silent
