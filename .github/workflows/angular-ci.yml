@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build-and-deploy:
@@ -27,11 +24,8 @@ jobs:
       - name: Construire l'application Angular
         run: npm run build -- --configuration production
 
-      - name: Configurer l'identité Git
-        run: |
-          git config --global user.email "hanae@example.com"
-          git config --global user.name "Hanae Nejjari"
-
       - name: Déployer sur GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx angular-cli-ghpages --dir=dist/portfolio --no-silent
+          npx angular-cli-ghpages --dir=dist/portfolio --repo=https://x-access-token:${GH_TOKEN}@github.com/HanaeNejjari/portfolio.git --no-silent
