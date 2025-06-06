@@ -1,4 +1,4 @@
-/* 🌈 Fond général avec un dégradé */
+/* Fond général avec un dégradé */
 .competences-page {
   display: flex;
   justify-content: center;
@@ -71,7 +71,6 @@ button:hover {
   color: white;
 }
 
-/* 💡 Zone de description affichée après un clic */
 .competence-details {
   background: #e3e3e3;
   padding: 15px;
@@ -79,4 +78,14 @@ button:hover {
   border-left: 4px solid #1976d2;
   font-size: 18px;
   border-radius: 8px;
+}
+
+.radar-chart-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

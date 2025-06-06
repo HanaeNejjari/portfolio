@@ -1,3 +1,57 @@
-.toolbar {
-  width: 100%;
+.main-layout {
+  height: 100vh;
+}
+
+.main-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .user-name {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.spacer {
+  flex: 1;
+}
+
+.desktop-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-links {
+    display: none;
+  }
+  .menu-icon {
+    display: inline-flex;
+  }
+}
+
+.main-content {
+  padding-top: 64px; // ou plus si besoin
 }

@@ -6,8 +6,17 @@
       ainsi que professionnel.
     </p>
 
-    <div class="competences-wrapper">
+    <!-- 🎯 Schéma Radar -->
+    <div class="radar-chart-container">
+      <canvas
+        baseChart
+        [data]="radarChartData"
+        [options]="radarChartOptions"
+        [type]="radarChartType">
+      </canvas>
+    </div>
 
+    <div class="competences-wrapper">
       <!-- Compétences Techniques -->
       <div class="competence-box">
         <h3>💻 Compétences Techniques</h3>
@@ -43,7 +52,6 @@
           <p>{{ selectedLanguageDescription }}</p>
         </div>
       </div>
-
     </div>
   </div>
 </div>

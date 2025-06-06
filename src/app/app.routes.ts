@@ -6,6 +6,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { ContactComponent } from './components/contact/contact.component';
 import { CompetencesComponent } from './components/competences/competences.component';
 import { CompetenceDetailsComponent } from './competence-details/competence-details.component';
+import {AboutComponent} from './components/about/about.component';
 
 export const routes: Routes = [
   // Pages principales
@@ -19,6 +20,9 @@ export const routes: Routes = [
 
   // Page contact
   { path: 'contact', component: ContactComponent },
+
+  // Page moi
+  { path: 'profil', component: AboutComponent },
 
   // Fallback : redirige toute route inconnue vers les compétences
   { path: '**', redirectTo: 'competences' }
